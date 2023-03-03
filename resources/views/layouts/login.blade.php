@@ -69,14 +69,14 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Wrapper-->
 							<div class="d-flex flex-center flex-column-fluid">
 								<!--begin::Form-->
-								<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="../../demo1/dist/index.html" action="#">
+								<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="{{url('/')}}" action="{{action('UserAccountController@getLogin')}}" method="post">
+								@csrf
 									<!--begin::Heading-->
 									<div class="text-center mb-11">
                                         <img alt="Logo" src="{{ url('/')}}/media/auth/batavialogin.jpg" width="auto" height="50px" />
 										<!--end::Subtitle=-->
 									</div>
-									<!--begin::Heading-->
-									
+									<!--begin::Heading-->								
 									
 									<!--begin::Input group=-->
 									<div class="fv-row mb-8">
@@ -92,7 +92,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
                                     <div class="fv-row mb-3">
                                         <label class="form-check form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1"/>
+                                            <input class="form-check-input" name="remember" type="checkbox" value="1"/>
                                             <span class="form-check-label">
                                                 Remember Me ?
                                             </span>

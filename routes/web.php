@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserAccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Route Login
+Route::get('/login', [UserAccountController::class,'index']);
+Route::post('/login/get-login', [UserAccountController::class,'getLogin']);
+Route::get('/login/refresh', [UserAccountController::class,'refreshToken']);
+
+Route::get('/logout', [UserAccountController::class,'getLogout']);
 
 Route::get('/', function () {
     return view('layouts.login');
